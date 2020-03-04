@@ -1,0 +1,37 @@
+version: "3"
+services:
+  elasticsearch:
+    image: elasticsearch:7.6.0
+    container_name: es01
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+      node.name: es01
+      cluster.name: es-docker-cluster
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  kibana:
+    image: kibana:7.6.0
+    container_name: kibana
+    ports:
+      - "8080:5601"
+    #volumes:
+    #  - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+    #environment:
+    #  SERVER_NAME: server.name
+    #  KIBANA_DEFAULTAPPID: kibana.defaultAppId
+    #  XPACK_MONITORING_ENABLED: xpack.monitoring.enabled
+    links:
+      - elasticsearch
+
+volumes:
+  esdata:
+    driver: local
+
+#networks:
+#  elk:
+#    # Use a custom driver
