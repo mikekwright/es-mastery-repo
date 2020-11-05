@@ -125,7 +125,34 @@ content we just added.
 
 ### Fifth
 
+*TODO:* Add the hierarchy of parent/child
 
+### Sixth
 
+*TODO:* Add historical support
+
+### Seventh
+
+*TODO:* Demonstrate Scala code for retrieving document
+
+Scenario Conclusion
+-----------------------
+
+*TODO:*
+
+Lestrade Useful Queries
+------------------------
+
+*TODO:*
+
+Batman Useful Queries
+---------------------------
+
+*TODO:*
+
+References
+--------------------------
+
+*TODO:*
 
 
